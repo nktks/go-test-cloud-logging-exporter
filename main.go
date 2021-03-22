@@ -62,14 +62,14 @@ func main() {
 	if err := scanner.Err(); err != nil {
 		log.Fatal("reading standard input failed. %#v", err)
 	}
+	for _, v := range packages {
+		logger.Log(logging.Entry{Payload: v})
+	}
 	sort.SliceStable(tests, func(i, j int) bool { return tests[i].Elapsed > tests[j].Elapsed })
 	for i, v := range tests {
 		if i >= *top {
 			return
 		}
-		logger.Log(logging.Entry{Payload: v})
-	}
-	for _, v := range packages {
 		logger.Log(logging.Entry{Payload: v})
 	}
 
