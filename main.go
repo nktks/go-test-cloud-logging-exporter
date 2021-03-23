@@ -47,7 +47,8 @@ func main() {
 		v := &Payload{}
 		err := json.Unmarshal(scanner.Bytes(), v)
 		if err != nil {
-			log.Fatal("json unmarshal failed. %#v", err)
+			log.Printf("json unmarshal failed. %#v", err)
+			continue
 		}
 		if v.Action != "pass" && v.Action != "fail" {
 			continue
