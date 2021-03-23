@@ -69,10 +69,11 @@ func main() {
 	sort.SliceStable(tests, func(i, j int) bool { return tests[i].Elapsed > tests[j].Elapsed })
 	for i, v := range tests {
 		if i >= *top {
-			return
+			break
 		}
 		logger.Log(logging.Entry{Payload: v})
 	}
+	log.Printf("tid %s export completed.", *tid)
 
 }
 
