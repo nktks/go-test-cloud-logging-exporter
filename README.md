@@ -14,7 +14,9 @@ go get -u github.com/nakatamixi/go-test-cloud-logging-exporter
 go-test-cloud-logging-exporter -h
 Usage of go-test-cloud-logging-exporter:
   -id string
-    	test id for log attribute (default "4542a761-e459-4d51-9b6e-e49794e6945c")
+    	test id for log attribute (default "fbcabe2b-5196-475d-afdb-eb726165ad3a")
+  -junitxml string
+    	gotestsum --junitxml file path
   -name string
     	logName for Cloud Logging (default "go-test-log")
   -p string
@@ -23,8 +25,14 @@ Usage of go-test-cloud-logging-exporter:
     	logging target top number sorted by elapsed (default 50)
 ```
 ## Run
+by `go test -json`
 ```
 go test -json ./... | GOOGLE_APPLICATION_CREDENTIALS=/path/to/cred.json go-test-cloud-logging-exporter -p your-gcp-project
+```
+by `gotestsum --junitxml=junit.xml`
+```
+gotestsum --junitfile=junit.xml ./...
+GOOGLE_APPLICATION_CREDENTIALS=/path/to/cred.json go-test-cloud-logging-exporter -p your-gcp-project -junitxml junit.xml
 ```
 
 You need `roles/logging.logWriter` permission to your account.
