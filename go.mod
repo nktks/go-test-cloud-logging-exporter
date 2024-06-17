@@ -1,4 +1,4 @@
-module github.com/nakatamixi/go-test-cloud-logging-exporter
+module github.com/nktks/go-test-cloud-logging-exporter
 
 go 1.16
 

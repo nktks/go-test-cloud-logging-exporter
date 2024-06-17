@@ -6,7 +6,7 @@ Export `go test -json` results to Google Cloud Logging for monitoring.
 
 ## Install
 ```
-go get -u github.com/nakatamixi/go-test-cloud-logging-exporter
+go get -u github.com/nktks/go-test-cloud-logging-exporter
 ```
 
 ## Usage

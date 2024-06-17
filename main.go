@@ -15,7 +15,7 @@ import (
 	"cloud.google.com/go/logging"
 	"github.com/google/uuid"
 
-	"github.com/nakatamixi/go-test-cloud-logging-exporter/junitxml"
+	"github.com/nktks/go-test-cloud-logging-exporter/junitxml"
 )
 
 var (
